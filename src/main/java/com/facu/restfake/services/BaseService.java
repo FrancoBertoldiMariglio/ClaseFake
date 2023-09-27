@@ -18,4 +18,3 @@ public interface BaseService  <E extends Base,ID extends Serializable> {
     public boolean delete(ID id) throws Exception;
 
 }
-
