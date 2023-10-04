@@ -17,22 +17,25 @@ public interface ProductoRepository extends BaseRepository<Producto, Long> {
 //    filtrar por el campo price en la base de datos, buscando los productos cuyo precio sea mayor a 1000.
 
     @Query("SELECT p FROM Producto p WHERE p.price > :precioMinimo")
-    List<Producto> buscarPorPrecioMayorA(@Param("precioMinimo") Double precioMinimo);
+    List<Producto> buscarPorPrecioMenor(@Param("precioMinimo") Double precioMinimo);
 
     @Query(
             value = "SELECT * FROM Producto WHERE Producto.price > :precioMinimo",
             nativeQuery = true
     )
-    List<Producto> buscarPorPrecioMayorA1(@Param("precioMinimo") Double precioMinimo);
+    List<Producto> buscarPorPrecioMenor1(@Param("precioMinimo") Double precioMinimo);
 
 //    Puedes crear una consulta personalizada en tu repositorio ProductoRepository para buscar y
 //    filtrar por el campo price en la base de datos, buscando los productos cuyo precio sea mayor a 1000 y
 //    menor que 5000
 
+    @Query("SELECT p FROM Producto p WHERE p.price > :precioMinimo AND p.price < :precioMaximo")
+    List<Producto> buscarPorPrecioEntre(@Param("precioMinimo") Double precioMinimo, @Param("precioMaximo") Double precioMaximo);
+
     @Query(
             value = "SELECT * FROM Producto WHERE Producto.price > :precioMinimo AND Producto.price < :precioMaximo",
             nativeQuery = true
     )
-    List<Producto> buscarPorPrecioMayorA1(@Param("precioMinimo") Double precioMinimo, @Param("precioMaximo") Double precioMaximo);
+    List<Producto> buscarPorPrecioEntre1(@Param("precioMinimo") Double precioMinimo, @Param("precioMaximo") Double precioMaximo);
 
 }

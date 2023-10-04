@@ -20,8 +20,8 @@ import java.math.BigDecimal;
 public class Rating extends Base {
 
     @NotNull
-    @Column(name = "rating", precision = 10, scale = 2)
-    private BigDecimal rate;
+    @Column(name = "rating")
+    private Double rate;
 
     @Column(name = "contador")
     private int count;
