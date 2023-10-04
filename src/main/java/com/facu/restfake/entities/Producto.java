@@ -11,30 +11,25 @@ import org.antlr.v4.runtime.misc.NotNull;
 import java.math.BigDecimal;
 
 @Entity
-
+@Table
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
-public class Product  extends Base {
-
+public class Producto extends Base {
 
     @NotNull
     @Column(name = "titulo")
     private String title;
-        @NotNull
-        @Column(name = "precio_compra", precision = 10, scale = 2)
-        private BigDecimal price;
-
-
-        @Column(name = "description")
-        private String description;
-
-        @Column(name = "categoria")
-        private String category;
-
-        @Column(name = "url_imagen")
-        private String image;
+    @NotNull
+    @Column(name = "precio_compra", precision = 10, scale = 2)
+    private BigDecimal price;
+    @Column(name = "description")
+    private String description;
+    @Column(name = "categoria")
+    private String category;
+    @Column(name = "url_imagen")
+    private String image;
 
 
     @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)

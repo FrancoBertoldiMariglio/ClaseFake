@@ -1,10 +1,8 @@
 package com.facu.restfake.services;
 
 import com.facu.restfake.entities.Base;
-import com.facu.restfake.entities.Product;
 import com.facu.restfake.repositories.BaseRepository;
 import jakarta.transaction.Transactional;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.Serializable;
 import java.util.List;
